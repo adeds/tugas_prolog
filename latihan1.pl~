@@ -1,0 +1,5 @@
+program:-nl,
+write('Masukkan nama   : '),read(Nama),
+write('Masukkan nim   : '),read(NIM),
+write('Nama   : '),write(Nama),nl,
+write('NIM   : '),write(NIM).

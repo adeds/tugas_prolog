@@ -1,0 +1,59 @@
+program:-nl,
+	write('-----'),nl,
+	write('menu'),nl,
+	write('-----'),nl,
+	write('1.Kubus'),nl,
+	write('2.Balok'),nl,
+	write('3.Kerucut'),nl,
+	write('4.Prisma Bebas'),nl,
+	write('5.Bola'),nl,
+
+	write('-----'),nl,
+	write('pilihan anda :'),read(Pil),nl,
+	(
+		Pil=1->nl,
+		write('Masukkan Sisi :'),read(Sisi),
+		Luas is (Sisi*Sisi)*Sisi,nl,
+		write('Luasnya ='),
+		write(Luas),
+		program;
+
+		Pil=2->nl,
+		write('Masukkan Panjang :'),read(Panjang),
+		write('Masukkan Lebar   :'),read(Lebar),
+		write('Masukkan Tinggi  :'),read(Tinggi),
+		Luas is (Panjang*Lebar*Tinggi),nl,
+		write('Luasnya ='),
+		write(Luas),
+		program;
+
+
+	        Pil=3->nl,
+		write('Masukkan Jari-Jari Alas:'),read(Jari),
+		write('Masukkan Tinggi :'),read(Tinggi),
+
+		Luas is (3.14*Jari*Jari*Tinggi)/3,nl,
+		write('Luasnya ='),
+		write(Luas),
+		program;
+
+
+	        Pil=4->nl,
+		write('Masukkan Luas Alas :'),read(Lalas),
+		write('Masukkan Tinggi    :'),read(Tinggi),
+		Luas is Lalas*Tinggi,nl,
+		write('Luasnya ='),
+		write(Luas),
+		program;
+
+	        Pil=5->nl,
+		write('Masukkan Jari-Jari :'),read(Jari),
+
+		Luas is (4*3.14*Jari*Jari*Jari)/3,nl,
+		write('Luasnya ='),
+		write(Luas),
+		program;
+
+
+		write('Pilihan 1-3')
+					).

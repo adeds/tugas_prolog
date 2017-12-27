@@ -1,0 +1,9 @@
+fact(jon).
+fact(on).
+
+n_xs(N, Xs) :-
+    length(Xs, N),
+    maplist(fact(A),'=',write(A), Xs).
+
+tes(Y):-between(1, Y, A),
+	n_xs(Y,Contoh).

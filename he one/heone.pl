@@ -1,0 +1,73 @@
+/*
+sapi,singa,kambing,kuda,buaya,gajah,jerapah
+ayam,komodo,ular,harimau,bebek,angsa,kalkun,katak
+*/
+
+kaki4(sapi).
+kaki4(singa).
+kaki4(kambing).
+kaki4(kuda).
+kaki4(buaya).
+kaki4(gajah).
+kaki4(jerapah).
+kaki4(komodo).
+kaki4(harimau).
+kaki4(katak).
+
+kaki2(ayam).
+kaki2(bebek).
+kaki2(angsa).
+kaki2(kalkun).
+
+menyusui(sapi).
+menyusui(singa).
+menyusui(kambing).
+menyusui(kuda).
+menyusui(gajah).
+menyusui(jerapah).
+menyusui(harimau).
+
+hidup_2_alam(katak).
+
+sayap(ayam).
+sayap(bebek).
+sayap(angsa).
+sayap(kalkun).
+
+kbg_biak_tlg_klt_makan(sapi,lahir,berdaun,berambut,tbhn).
+kbg_biak_tlg_klt_makan(singa,lahir,berdaun,berambut,daging).
+kbg_biak_tlg_klt_makan(kambing,lahir,berdaun,berambut,tbhn).
+kbg_biak_tlg_klt_makan(kuda,lahir,berdaun,berambut,tbhn).
+kbg_biak_tlg_klt_makan(buaya,telur,tidak,bersisik,daging).
+kbg_biak_tlg_klt_makan(gajah,lahir,berdaun,berambut,tbhn).
+kbg_biak_tlg_klt_makan(jerapah,lahir,berdaun,berambut,tbhn).
+kbg_biak_tlg_klt_makan(ayam,telur,tidak,berbulu,segala).
+kbg_biak_tlg_klt_makan(komodo,telur,tidak,bersisik,daging).
+kbg_biak_tlg_klt_makan(ular,telur,tidak,bersisik,daging).
+kbg_biak_tlg_klt_makan(harimau,lahir,berdaun,berambut,daging).
+kbg_biak_tlg_klt_makan(bebek,telur,tidak,berbulu,segala).
+kbg_biak_tlg_klt_makan(angsa,telur,tidak,berbulu,segala).
+kbg_biak_tlg_klt_makan(kalkun,telur,tidak,berbulu,segala).
+kbg_biak_tlg_klt_makan(katak,telur,tidak,basah,segala).
+
+mamalia(X) :- kbg_biak_tlg_klt_makan(X,lahir,berdaun,_,_), menyusui(X),kaki4(X).
+aves(X) :- kbg_biak_tlg_klt_makan(X,telur,tidak,berbulu,_), sayap(X),kaki2(X).
+reptil(X) :- kbg_biak_tlg_klt_makan(X,telur,tidak,bersisik,_).
+amphibi(X) :- hidup_2_alam(X) , kbg_biak_tlg_klt_makan(X,telur,_,_,_).
+
+carnivora(X) :- kbg_biak_tlg_klt_makan(X,_,_,_,daging).
+herbivora(X) :- kbg_biak_tlg_klt_makan(X,_,_,_,tbhn).
+omnivora(X) :- kbg_biak_tlg_klt_makan(X,_,_,_,segala).
+
+hewan:- nl,
+	write('1.Mamalia '),nl,
+	write('2.Pteridophyta'),nl,
+	write('3.Spermatophyta'),nl,
+
+	write('Masukkan pilihan [1-3]   : '), read(Pil),
+
+	(   Pil = 1 -> mamalia(X),write(X);
+	    Pil = 2 -> write('2');
+	    Pil = 3 -> spermatophyta;
+	write('Inputan Salah')).
+

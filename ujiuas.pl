@@ -1,0 +1,2 @@
+suka(kamu).
+soka(kOrang).

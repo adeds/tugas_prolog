@@ -1,0 +1,21 @@
+menu :- repeat,
+    write('                          '),nl,
+    write('   1.the number of hello  '),nl,
+    write('                          '),nl,
+    write('enter your choice:'),nl,
+    read(Choice), Choice>0, Choice =<6,
+    doit(Choice), Choice=6, !.
+
+doit(1):-
+    numberofhello(N),
+    write('Number of hello is = '), write(N), nl.
+
+my_list([hello,hello,hello]).
+
+
+counthowmany(_, [], 0) :- !.
+counthowmany(X, [X|Q], N) :- !, counthowmany(X, Q, N1), N is N1+1.
+counthowmany(X, [_|Q], N) :- counthowmany(X, Q, N).
+
+
+numberofhello(N) :- my_list(L),counthowmany(hello,L,N).
